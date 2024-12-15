@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class GPACalculation {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int totalSubjects = 5;
+        int[] marks = new int[totalSubjects];
+        double totalGPA = 0;
+
+       
+        System.out.println("Enter marks for " + totalSubjects + " subjects:");
+        for (int i = 0; i < totalSubjects; i++) {
+            System.out.print("Subject " + (i + 1) + " marks: ");
+            marks[i] = scanner.nextInt();
+            totalGPA += calculateGPA(marks[i]);
+        }
+
+      
+        double averageGPA = totalGPA / totalSubjects;
+        System.out.printf("Overall GPA: %.2f\n", averageGPA);
+        System.out.println("Grade: " + getGrade(averageGPA));
+    }
+
+  
+    public static double calculateGPA(int mark) {
+        if (mark >= 90) return 4.0;
+        if (mark >= 80) return 3.5;
+        if (mark >= 70) return 3.0;
+        if (mark >= 60) return 2.5;
+        if (mark >= 50) return 2.0;
+        return 0.0;
+    }
+    public static String getGrade(double gpa) {
+        if (gpa >= 3.7) return "A";
+        if (gpa >= 3.0) return "B";
+        if (gpa >= 2.0) return "C";
+        if (gpa >= 1.0) return "D";
+        return "F";
+    }
+}

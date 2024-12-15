@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class BasicCalculation {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the 1st number: ");
+        int num1 = scanner.nextInt();
+        
+        System.out.print("Enter the 2nd number: ");
+        int num2 = scanner.nextInt();
+
+       
+        System.out.print("Enter operation (plus, minus, multiply, divide): ");
+        String operation = scanner.next();
+
+        int result = 0;
+
+        switch (operation.toLowerCase()) {
+            case "plus":
+                result = num1 + num2;
+                break;
+            case "minus":
+                result = num1 - num2;
+                break;
+            case "multiply":
+                result = num1 * num2;
+                break;
+            case "divide":
+                if (num2 != 0) {
+                    result = num1 / num2;
+                } else {
+                    System.out.println("Cannot divide by zero.");
+                    return;
+                }
+                break;
+            default:
+                System.out.println("Invalid operation name.");
+                return;
+        }
+
+        System.out.println("Result: " + result);
+    }
+}

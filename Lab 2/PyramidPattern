@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class PyramidPattern {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Read the number of lines
+        System.out.print("Enter the number of lines for the pyramid: ");
+        int lines = scanner.nextInt();
+
+        // Print the pyramid pattern
+        for (int i = 1; i <= lines; i++) {
+            // Print leading spaces
+            for (int j = lines - i; j > 0; j--) {
+                System.out.print(" ");
+            }
+            // Print stars
+            for (int k = 1; k <= (2 * i - 1); k++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
